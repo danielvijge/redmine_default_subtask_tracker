@@ -1,0 +1,8 @@
+<h3><%= l(:default_subtask_tracker) %></h3>
+
+<% Tracker.all.each do |tracker| %>
+<p>  
+  <label id="settings_default_tracker_id_<%= tracker.id.to_s %>_label"><%= tracker.name %></label>
+  <%= select_tag "settings[default_tracker][" + tracker.id.to_s + "]", options_for_select(Tracker.all.map {|t| [t.name, t.id]},@settings['default_tracker'][tracker.id.to_s]) %>
+</p>
+<% end %>
