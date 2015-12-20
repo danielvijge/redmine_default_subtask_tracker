@@ -1,7 +1,7 @@
 Redmine::Plugin.register :redmine_default_subtask_tracker do
   name 'Default Subtask Tracker'
   author 'Daniel Vijge'
-  description 'Set a default tracker for subtasks'
+  description 'Set default trackers for subtasks'
   version '0.1'
   url 'http://www.github.com/danielvijge/redmine_default_subtask_tracker'
   
