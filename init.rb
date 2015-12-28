@@ -8,14 +8,14 @@ Redmine::Plugin.register :redmine_default_subtask_tracker do
   #requires_redmine :version_or_higher => '2.0.0'  
   requires_redmine :version => '2.0'..'2.6'  
 
-  t_tracker = Array.new
-  Tracker.all.each do |tracker|
-    t_tracker[tracker.id] = tracker.id
-  end
-
   settings :default => {
-    :default_tracker => t_tracker,
+    :default_tracker => 1
   }, :partial => 'settings/default_subtask_tracker'
+
+  settings[:default][:default_tracker] = Hash.new
+  Tracker.all.each do |tracker|
+    settings[:default][:default_tracker][tracker.id.to_s] = tracker.id.to_s
+  end
 
 end
 
