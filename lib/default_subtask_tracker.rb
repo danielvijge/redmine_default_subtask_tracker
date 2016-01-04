@@ -7,7 +7,11 @@ module DefaultSubtaskTracker
       settings = {} if settings == ""
       
       default_tracker = settings['default_tracker'][parent_issue.tracker.id.to_s]
-      attrs[:tracker_id] = default_tracker
+      if settings['subtask_enabled'][parent_issue.tracker.id.to_s]
+        attrs[:tracker_id] = default_tracker
+      else
+        attrs[:tracker_id] = 0
+      end
       return attrs
     end
   end
