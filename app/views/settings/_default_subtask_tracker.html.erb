@@ -27,11 +27,12 @@ $(document).ready(function() {
       $('#settings_default_tracker_'+tracker_id+'_label').hide();
     }
   });
-});
 
-$('[id^=settings_subtask_enabled_]:not(:checked)').each(function(index) {
-    tracker_id = this.id.substring(this.id.lastIndexOf("_")+1);
-    $('#settings_default_tracker_'+tracker_id).hide();
-    $('#settings_default_tracker_'+tracker_id+'_label').hide();
+  $('[id^=settings_subtask_enabled_]:not(:checked)').each(function(index) {
+      tracker_id = this.id.substring(this.id.lastIndexOf("_")+1);
+      $('#settings_default_tracker_'+tracker_id).hide();
+      $('#settings_default_tracker_'+tracker_id+'_label').hide();
+  });
+
 });
 <% end %>
