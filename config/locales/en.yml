@@ -1,5 +1,5 @@
 # English strings go here for Rails i18n
 en:
-  default_subtask_tracker: "Default subtask Tracker"
+  default_subtask_tracker: "Default tracker for subtasks"
   enable_subtasks: "Enable subtasks"
   default_tracker: "Default tracker"
