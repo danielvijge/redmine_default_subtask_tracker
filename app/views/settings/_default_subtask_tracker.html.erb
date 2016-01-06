@@ -5,10 +5,10 @@
 <fieldset>
     <legend><%= tracker.name %></legend>
     <p>
-        <label>Enable subtasks</label>
+        <label><%= l(:enable_subtasks) %></label>
         <%= check_box_tag "settings[subtask_enabled][#{tracker.id}]", "1", @settings[:subtask_enabled][tracker.id.to_s] %>
         <br/><br/>
-        <label id="settings_default_tracker_<%= tracker.id %>_label">Default tracker</label>
+        <label id="settings_default_tracker_<%= tracker.id %>_label"><%= l(:default_tracker) %></label>
         <%= select_tag "settings[default_tracker][#{tracker.id}]", options_for_select(Tracker.all.map {|t| [t.name, t.id]},@settings[:default_tracker][tracker.id.to_s]) %>
     </p>
 </fieldset>
