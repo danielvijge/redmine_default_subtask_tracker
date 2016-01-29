@@ -5,8 +5,8 @@ Redmine::Plugin.register :redmine_default_subtask_tracker do
   version '0.2'
   url 'http://www.github.com/danielvijge/redmine_default_subtask_tracker'
   
-  #requires_redmine :version_or_higher => '2.0.0'  
-  requires_redmine :version => '2.0'..'2.6'  
+  requires_redmine :version_or_higher => '2.0.0'  
+  #requires_redmine :version => '2.0'..'2.6'  
 
   settings :default => {
     :default_tracker => 1,
